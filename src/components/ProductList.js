@@ -1,12 +1,26 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 
+ 
 const ProductList = () =>{
+  const [products,setProducts] = useState([]);
+// starter code
+  useEffect(()=>{
+     axios.get("http://localhost:4000/products")
+     .then(res => {
+         setProducts(res.data)
+         console.log(res)
+     }).catch(err=>{
+      console.log(err)
+     }) 
+  },[]);
+
+
     return( 
     <div className="container">
       <div className="row" style={{height:"50vh"}}>
-         <ProductCard/>
-         <ProductCard/>
-         <ProductCard/>
+      { products.map(p =>(<ProductCard data={p}/>))}    
       </div>
     </div>)
 }

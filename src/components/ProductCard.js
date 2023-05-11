@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 
-const ProductCard = () =>{
+const ProductCard = (props) =>{
+    const productUrl = "/products/"+ props.data._id;
     return(
         <div className="col">
-            <Link to="/products/detail">
+            <Link to={productUrl}>
             <div className="card" style={{width:"18rem"}}>
-               <img src="https://greendroprecycling.com/wp-content/uploads/2017/04/GreenDrop_Station_Aluminum_Can_1.jpg"/>
+               <img src={props.data.image}/>
                <div className="card-body">
-                    <h5 className="card-title">Product name</h5>
-                    <p>Price : 5000</p>
+                    <h5 className="card-title">{props.data.title}</h5>
+                    <p>Price : {props.data.mrp}</p>
                     <a href="#">Add to cart</a>
                </div>
             </div>
