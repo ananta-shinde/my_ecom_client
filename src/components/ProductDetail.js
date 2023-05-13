@@ -18,10 +18,9 @@ const ProductDetail = ()=>{
         })
     },[]);
     return(
-        <div className="container">
+        <div className="container" style={{margin:"5%"}}>
             <div className="row">
                 <div className="col">
-                    <p>{id}</p>
                 <img src={product.image}/>
                 </div>
                 <div className="col" style={{paddingTop:"100px"}}>

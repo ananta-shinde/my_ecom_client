@@ -1,13 +1,11 @@
 import {Link} from "react-router-dom"
+import Menubar from "./Menubar";
 import ProductList from "./ProductList";
 
 const Home = () =>{
-    return(<>
-        <h2>Welcome to myCart</h2>
-        <Link to="/login">Please login here</Link> 
-        <Link to="/signup">Please signup here</Link>
-        <ProductList/>
-    </>)
+    return(<div className="container" style={{margin:"8%"}}>
+          <ProductList/>       
+    </div>)
   }
 
 export default Home;

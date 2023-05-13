@@ -18,7 +18,7 @@ const ProductList = () =>{
 
 
     return( 
-    <div className="container">
+    <div className="container" style={{margin:"8%"}}>
       <div className="row" style={{height:"50vh"}}>
       { products.map(p =>(<ProductCard data={p}/>))}    
       </div>
