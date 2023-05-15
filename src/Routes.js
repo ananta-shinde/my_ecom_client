@@ -7,12 +7,17 @@ import Menubar from './components/Menubar';
 import ProductList from './components/ProductList';
 import AppTheme from './components/AppTheme';
 import Cart from './components/Cart';
+import AdminTheme from './components/AdminTheme';
+import AddProduct from './components/AddProduct';
 const AppRouter = ()=>{
     return(
         <BrowserRouter>
             <Routes>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/signup" element={<Signup/>}/>
+                <Route path="/admin" element={<AdminTheme/>}>
+                    <Route path="add" element={<AddProduct/>}/>
+                </Route>
                 <Route path="/" element={<AppTheme/>}>
                     <Route path="" element={<Home/>}/>
                     <Route path="cart" element={<Cart/>}/>
